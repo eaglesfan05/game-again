@@ -4,6 +4,8 @@ var questionContainer = document.getElementById("question-container");
 var questionElement = document.getElementById("question");
 var answerButtons = document.getElementById("answer-buttons");
 var userScore = 0;
+var currentQuestionIndex = 0;
+
 
 startButton.addEventListener("click", startGame);
 nextButton.addEventListener("click", () =>{
@@ -17,7 +19,7 @@ function startGame(){
     startButton.classList.add("hide");
     //generates questions after start is hit
     
-    currentQuestionIndex = 0;
+    
     questionContainer.classList.remove("hide");
     setNextQuestion();
 }
@@ -64,43 +66,3 @@ if (questions.length > currentQuestionIndex + 1){
  }
 nextButton.classList.remove("hide");
 
-
-questions = [
-    {
-        question: "Inside which HTML element do we put the Javascript?",
-        answers: [
-        {text: "<javascript>", correct: false },
-        {text: "<body>", correct: false},
-        {text: "<script>", correct: true},            
-        {text: "<h1>", correct: false}
-    ]
-            
-},
-    {
-        question: "Where is the correct place to put the Javascript tag",
-        answers: [
-            {text: "The <head> tag", correct: false},
-            {text: "Either the <head> or the <body> tags", correct: false},
-            {text: "The <body> tag", correct: true},
-            {text: "There are no rules!", correct: false}
-    ]
-},
-    {
-        question: "How do you write 'Hello World' in and alert box",
-        answers: [   
-        {text: "msgBox('Hello World');", correct: false},
-        {text: "msg('Hello World');", correct: false},
-        {text: "alertBox('Hello World');", correct: false},
-        {text: "alert('Hello World');", correct: true}
-    ]
-},
-    {
-        question: "How do you create a function in JavaScript?",
-        answers: [     
-        {text: "function = myFunction()", correct: true},
-        {text: "function myFunction()", correct: false},
-        {text: "function:myFunction()", correct: false},
-        {text: "myFunction = function", correct: false}
-        ]
-    }
-];
